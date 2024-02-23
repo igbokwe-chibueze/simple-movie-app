@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import SearchIcon from "./search.svg";
 import MovieCard from "./MovieCard";
 
-const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
+const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=5724090f";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
