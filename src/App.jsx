@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-key */
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import SearchIcon from "./search.svg";
 import MovieCard from "./MovieCard";
@@ -11,19 +10,19 @@ const App = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    searchMovies("Batman");
+    searchMovies("Spiderman");
   }, []);
 
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
 
-    setMovies(data.Search);
+    setMovies(data.Search || []);
   };
 
   return (
     <div className="app">
-      <h1 className = 'header'>MovieLand</h1>
+      <h1 className="header">MovieLand</h1>
 
       <div className="search">
         <input
@@ -40,15 +39,15 @@ const App = () => {
         />
       </div>
 
-      {movies?.length > 0 ? (
+      {movies.length > 0 ? (
         <div className="container">
-          {movies.map((movie) => (
-            <MovieCard movie={movie} />
+          {movies.map((movie, index) => (
+            <MovieCard key={index} movie={movie} />
           ))}
         </div>
       ) : (
         <div className="empty">
-          <h2 className="empty-h2">No movies has been found</h2>
+          <h2 className="empty-h2">No movies have been found</h2>
         </div>
       )}
     </div>
