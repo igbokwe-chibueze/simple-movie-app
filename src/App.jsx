@@ -16,8 +16,10 @@ const App = () => {
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
+    console.log(data)
 
     setMovies(data.Search || []);
+    console.log(movies)
   };
 
   return (
@@ -47,7 +49,7 @@ const App = () => {
         </div>
       ) : (
         <div className="empty">
-          <h2 className="empty-h2">No movies have been found</h2>
+          <h2 className="empty-h2">No movies have been found 1</h2>
         </div>
       )}
     </div>
