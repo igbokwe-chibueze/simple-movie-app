@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import SearchIcon from "./search.svg";
 import MovieCard from "./MovieCard";
 
-const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=5724090f";
+const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=5724090f";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,7 +49,7 @@ const App = () => {
         </div>
       ) : (
         <div className="empty">
-          <h2 className="empty-h2">No movies have been found 1</h2>
+          <h2 className="empty-h2">No movies have been found 2</h2>
         </div>
       )}
     </div>
